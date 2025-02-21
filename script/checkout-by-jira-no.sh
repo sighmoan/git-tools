@@ -1,0 +1,1 @@
+eval git checkout `git branch --list STR-$@* | head -1`
