@@ -44,12 +44,6 @@ alias gcj=$SCRIPT_PATH'/checkout-by-jira-no.sh'
 alias gpom='git pull origin main'
 alias gb='git branch'
 
-#env
-
-M2_HOME=C:\\Users\\ata966\\code\\lib\\apache-maven-3.9.9-bin
-MAVEN_HOME=%M2_HOME%
-MAVEN_BIN=%M2_HOME%\bin
-
 function get_git_numbers {
   local status=$(git status --porcelain 2> /dev/null)
   if [ "$status" ]; then
