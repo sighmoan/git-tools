@@ -1,6 +1,6 @@
 SCRIPT_DIRNAME="script"
 SCRIPT_PATH="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/$SCRIPT_DIRNAME"
-echo $SCRIPT_PATH;
+
 # navigation
 alias st='cd ~/code/st'
 
