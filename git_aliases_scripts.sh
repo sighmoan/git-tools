@@ -1,9 +1,6 @@
 SCRIPT_DIRNAME="script"
 SCRIPT_PATH="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/$SCRIPT_DIRNAME"
 
-# navigation
-alias st='cd ~/code/st'
-
 # jira
 alias jira=$SCRIPT_PATH"/navigate-to-jira-ticket.sh"
 
@@ -28,12 +25,11 @@ alias gcm=$SCRIPT_PATH'/commit-w-message-no-quotes.sh'
 
 alias gam='git add . && gst && gcm '
 
-alias gcb='git branch --show-current | clip'
-
 alias gcn='git commit --amend --no-edit'
 
 # branch
 alias gpb='git push -u origin HEAD'
+alias gcb='git branch --show-current | clip'
 alias gco='git checkout'
 __git_complete gco _git_checkout
 alias gcob='git checkout -B'
