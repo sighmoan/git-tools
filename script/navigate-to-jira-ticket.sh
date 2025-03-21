@@ -1,5 +1,19 @@
-ticket=${1:-`git branch --show-current 2> /dev/null | sed -E "s/"$JIRA_TICKET_PREFIX"([0-9]+).*/\1/"`}
-if [ $ticket ] 
+#!/bin/bash
+
+input=$1
+
+if [[ $input =~ ^[0-9]+$ ]] && [[ ${#input} -le 5 ]]; then
+    ticket=${1:-`git branch --show-current 2> /dev/null | sed -E "s/"$JIRA_TICKET_PREFIX"([0-9]+).*/\1/"`}
+else
+    ticket=$(git show $input | grep -oE "$JIRA_TICKET_PREFIX[0-9]+" | sed "s/$JIRA_TICKET_PREFIX//g")
+
+    if [ -z "$ticket" ]; then
+        echo "sorry, could not locate a jira ticket in that commit."
+        exit 1;
+    fi
+fi
+
+if [ "$ticket" ] 
     then 
         git web--browse $JIRA_URL"/browse/"$JIRA_TICKET_PREFIX$ticket && exit
 fi
