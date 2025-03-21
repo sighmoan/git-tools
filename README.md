@@ -29,11 +29,16 @@ export JIRA_TICKET_URL=$JIRA_URL"/browse/"
 ### tools
 
 - displays a short form of `git status` in the command prompt
+    
     the number of files added/modified
+
     bit buggy but it had to be quick to prevent the prompt being slow
+
     quick indication basically of how much is changed/staged/modified
+
 - quick commit without having to wrap the commit message in quotes
     `gcm commit message` instead of `git commit -m 'commit message'`
+    `gam commit message` also adds all changed files
 - add changes to the previous commit without changing the commit message
     `gcn` instead of `git commit --amend -m 'typing out the previous message'`
     (actually just `git commit --amend --no-edit`)
