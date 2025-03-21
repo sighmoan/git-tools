@@ -29,6 +29,7 @@ alias gcn='git commit --amend --no-edit'
 
 # branch
 alias gpb='git push -u origin HEAD'
+alias gpbf='git push -u origin HEAD --force-with-lease'
 alias gcb='git branch --show-current | clip'
 alias gco='git checkout'
 __git_complete gco _git_checkout
